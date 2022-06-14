@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright (c) 2022. All rights reserved.
+  ~ @author: Volodymyr Hryvinskyi <mailto:volodymyr@hryvinskyi.com>
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="hryvinskyi_pagespeed" showInDefault="1" showInWebsite="1" showInStore="1" type="text"
+                 translate="label">
+            <class>separator-top</class>
+            <label>PageSpeed</label>
+            <tab>hryvinskyi</tab>
+            <resource>Hryvinskyi_PageSpeedAdminUi::config</resource>
+            <group id="cache_management" translate="label" type="text" sortOrder="300" showInDefault="1">
+                <label>Cache Management</label>
+                <field id="max_size" translate="label comment" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Max size of cache folder</label>
+                    <comment><![CDATA[in Mb, leave empty to disable the feature]]></comment>
+                </field>
+                <field id="status" sortOrder="20" showInDefault="1">
+                    <frontend_model>Hryvinskyi\PageSpeedAdminUi\Block\Adminhtml\System\Config\Cache\Status</frontend_model>
+                </field>
+                <field id="clean" sortOrder="20" showInDefault="1">
+                    <frontend_model>Hryvinskyi\PageSpeedAdminUi\Block\Adminhtml\System\Config\Cache\Clean</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
